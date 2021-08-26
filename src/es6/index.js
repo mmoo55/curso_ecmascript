@@ -79,3 +79,55 @@ console.log(globalVar);
 const a = 'b';
 a = 'a';
 console.log(a);
+
+// Crar objetos
+// Antes, ES5
+let name = 'gerson';
+let age = 25;
+
+obj = { name: name, age: age };
+
+//ES6
+obj2 = { name, age };
+console.log(obj2);
+
+// Arrow functions
+// Antes
+const names = [
+    { name: 'Oscar', age: 32 },
+    { name: 'Yesica', age: 27 }
+]
+
+let listOfNames = names.map(function (item){
+    console.log(item.name);
+});
+
+// ES6
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) = {
+    // Code
+}
+
+const listOfNames4 = name => {
+    // Code
+}
+
+const square = num => num * num;    // Retorna el valor, ya no es necesario return
+
+
+// Promesas (Para asincronismo)
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (true) {
+            resolve('Hey!');
+        } else {
+            reject('Ups!!');
+        }
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .then(() => console.log('hola'))    // se puede anidar diferentes elementos then en caso de necesitar realizar algo
+    .catch(error => console.log(error));
