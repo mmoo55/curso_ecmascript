@@ -131,3 +131,41 @@ helloPromise()
     .then(response => console.log(response))
     .then(() => console.log('hola'))    // se puede anidar diferentes elementos then en caso de necesitar realizar algo
     .catch(error => console.log(error));
+
+// Clases
+class calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sum(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2,2));
+
+// Módulos; importar y exportar de otros archivos o módulos
+import { hello } from './module'
+
+hello();
+
+// Generadores, función especial que retorna una serie de valores según el algoritmo definido
+function* helloWorld() {
+    if (true) {
+        yield 'Hellos, ';
+    }
+    if (true) {
+        yield 'World';
+    }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
